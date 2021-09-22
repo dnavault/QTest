@@ -23,7 +23,13 @@ app.post("/scan", (req, res) => {
   // It shall be returned as a png image format
   // In case of an error, it will save the error inside the "err" variable and display it
 
-  qr.toDataURL(url, (err, src) => {
+  const opts = {
+    margin:1
+}
+
+
+
+  qr.toDataURL(url, opts, (err, src) => {
     if (err) res.send("Error occured");
 
     // Let us return the QR code image as our response and set it to be the source used in the webpage

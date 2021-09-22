@@ -24,10 +24,9 @@ app.post("/scan", (req, res) => {
   // In case of an error, it will save the error inside the "err" variable and display it
 
   const opts = {
-    margin:1
-}
-
-
+    margin: 3,
+    width: 150
+  };
 
   qr.toDataURL(url, opts, (err, src) => {
     if (err) res.send("Error occured");
